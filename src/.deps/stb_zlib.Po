@@ -1,0 +1,3 @@
+stb_zlib.o: stb_zlib.c /usr/include/stdc-predef.h ../config.h
+/usr/include/stdc-predef.h:
+../config.h:

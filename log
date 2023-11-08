@@ -1,0 +1,32 @@
+make  all-recursive
+make[1]: Entering directory '/home/emachines/source/gngeo'
+Making all in src
+make[2]: Entering directory '/home/emachines/source/gngeo/src'
+Making all in effect
+make[3]: Entering directory '/home/emachines/source/gngeo/src/effect'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/emachines/source/gngeo/src/effect'
+Making all in blitter
+make[3]: Entering directory '/home/emachines/source/gngeo/src/blitter'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/emachines/source/gngeo/src/blitter'
+Making all in ym2610
+make[3]: Entering directory '/home/emachines/source/gngeo/src/ym2610'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/emachines/source/gngeo/src/ym2610'
+Making all in generator68k
+make[3]: Entering directory '/home/emachines/source/gngeo/src/generator68k'
+make  all-am
+make[4]: Entering directory '/home/emachines/source/gngeo/src/generator68k'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/home/emachines/source/gngeo/src/generator68k'
+make[3]: Leaving directory '/home/emachines/source/gngeo/src/generator68k'
+Making all in mamez80
+make[3]: Entering directory '/home/emachines/source/gngeo/src/mamez80'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/emachines/source/gngeo/src/mamez80'
+make[3]: Entering directory '/home/emachines/source/gngeo/src'
+gcc  -g -O2 -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -O3 -fstrength-reduce -frerun-loop-opt -Wall -Wno-unused -funroll-loops                     -ffast-math  -fexpensive-optimizations                      -malign-double -fomit-frame-pointer -g 		    -fno-strict-aliasing -pipe -DCPU=x86_64   -o gngeo pd4990a.o video.o profiler.o main.o list.o memory.o resfile.o timer.o frame_skip.o messages.o screen.o emu.o neocrypt.o sound.o unzip.o debug.o state.o conf.o transpack.o gnutil.o menu.o roms.o mame_layer.o neoboot.o event.o stb_image.o stb_zlib.o  generator68k_interf.o   mamez80_interf.o    effect/libeffect.a blitter/libblitter.a ym2610/libym2610.a generator68k/libgenerator68k.a mamez80/libmamez80.a  -lz -lm  -L/usr/lib -lSDL
+make[3]: Leaving directory '/home/emachines/source/gngeo/src'
+make[2]: Leaving directory '/home/emachines/source/gngeo/src'
+make[1]: Leaving directory '/home/emachines/source/gngeo'
