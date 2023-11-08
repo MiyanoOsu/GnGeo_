@@ -1,20 +1,19 @@
-GNGEO : A NeoGeo emulator for linux (and maybe some other unix)
+# GNGEO : A NeoGeo emulator for linux (and maybe some other unix)
 
 Licence:
 	Gngeo is build arround many different block with various licence.
 	The original code is released under the GPLV2 with this special exeption:
 	
-		As a special exception, You have
-		the permission to link the code of this program with
-		independent modules,regardless of the license terms of these
-		independent modules, and to copy and distribute the resulting
-		executable under terms of your choice, provided that you also
-		meet, for each linked independent module, the terms and conditions
-		of the license of that module. An independent module is a module
-		which is not derived from or based on Gngeo. If you modify
-		this library, you may extend this exception to your version of the
-		library, but you are not obligated to do so.  If you do not wish
-		to do so, delete this exception statement from your version.
+	As a special exception, You have the permission to link the code of this program with
+	independent modules,regardless of the license terms of these
+	independent modules, and to copy and distribute the resulting
+	executable under terms of your choice, provided that you also
+	meet, for each linked independent module, the terms and conditions
+	of the license of that module. An independent module is a module
+	which is not derived from or based on Gngeo. If you modify
+	this library, you may extend this exception to your version of the
+	library, but you are not obligated to do so.  If you do not wish
+	to do so, delete this exception statement from your version.
 
 	Gngeo could not exist without the Mame project, and some code come
 	directly from it (the ym2610 for example). As you may know, the Mame
@@ -22,14 +21,27 @@ Licence:
 	of gngeo (as a whole) is also forbided. This is the same with Cyclone,
 	Drz80, Raze and Starscream.	  
 
-REQUIREMENT : 
-	SDL-1.2.x and the libz
+# REQUIREMENT : 
+	SDL-1.2.x, libz
 	optional: nasm 0.98 for i386 asm optimisation
-	You will also need a neogeo BIOS
 
-INSTALLATION :
-	./configure && make
-	then 'make install' as root 
+# INSTALL IN HOST (LINUX)
+--> Debian (base on debian such as Ubuntu,..)
+```
+sudo apt-get install libsdl1.2-dev build-essential make autoconf
+cd gngeo //where the source place
+./confirgure --prefix=/usr
+make
+sudo make install
+```
+--> Arch linux
+ ```
+sudo pacman -S sdl12-compat base-devel make
+cd gngeo //where the source place
+./confirgure --prefix=/usr
+make
+sudo make install
+```
 
 	The configure script will detect the presence of nasm, and
 	choose the different CPU core in consequence. You can force
@@ -47,16 +59,17 @@ INSTALLATION :
 
 	To disable completly i386 assembler on x86
 	 --disable-i386
+# ASSIGN BUTTON :
+see src/conf.c and sample_gngeorc
 
-CROSSCOMPILATION :
-	To build gngeo in a crosscompilation environement, use the folowing
-	./configure --build=i686-pc-linux-gnu --host=[HOST] --with-sdl-prefix=[Path to your corsscompiled SDL] CFLAGS=-I[PATH to the default include dir of your crosscompil env]
-
-USAGE :
+# USAGE :
 	You can start a game with the folowing command:
-	# gngeo game
-	where game is the mame name of the rom, for example mslug for Metal Slug
+ ```
+	gngeo <game>
+```
+	where <game> is the mame/neo geo name of the rom, for example mslug for Metal Slug
 
+```
 Usage: gngeo [OPTION]... ROMSET
 Emulate the NeoGeo rom designed by ROMSET
 
@@ -103,9 +116,9 @@ Emulate the NeoGeo rom designed by ROMSET
 
 All boolean options can be disabled with --no-OPTION
 (Ex: --no-sound turn sound off)
+```
 
-
-CONFIGURATION :
+# CONFIGURATION :
 	All configuration can be done in $HOME/.gngeo/gngeorc
 	a sample file is provide : sample_gngeorc
 	Every option are also accessible on the command line.
@@ -114,7 +127,7 @@ CONFIGURATION :
 	By default, gngeo search bios and games in
 	$prefix/share/gngeo/ (the game must be in a zip file, the bios not)
 
-FRONTEND :
+# FRONTEND :
 	GGF:      The first frontend available for gngeo. It's written in Java, support
 	          game preview, very detailled game description and support many gngeo options.
 	          - License: GPL
